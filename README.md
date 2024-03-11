@@ -2,7 +2,7 @@
 
 ## State handling, data fetching & infinite scrolling.
 
-This project i found it useful for practicing different useful things that a Jr dev must know:
+This project i found it useful for practicing different things that a Jr dev must know:
 
 1. Create a react app using vanilla initialization. In order to create a react app with vanilla we have to create the enter point of the application:
 
