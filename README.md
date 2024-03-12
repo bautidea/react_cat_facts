@@ -25,29 +25,41 @@ In order to create a react app with vanilla we have to create the enter point of
 
 - Create a config file named vite.config.js, in which we declare that we are going to use the previous installed react plugin.
 
-```ruby
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+  ```ruby
+  import { defineConfig } from 'vite';
+  import react from '@vitejs/plugin-react';
 
-export default defineConfig({
-plugins: [react()],
-});
-```
+  export default defineConfig({
+  plugins: [react()],
+  });
+  ```
 
-- We go to the enter point file 'main.js' (called like that because its the first file loaded in index.html), and we change the file extension from '.js' to '.jsx'.
+- We go to the enter point file 'main.js' (called like that because its the first file loaded in index.html), and we change the file extension from '.js' to '.jsx'. Because files with .js extension are not prepared to parse JSX syntax.
 
   In 'main.jsx' file we import ReactDOM and React, and render the 'app' component declared at 'index.html'
 
-```ruby
-import ReactDom from 'react-dom/client';
-import React from 'react';
+  ```ruby
+  import ReactDom from 'react-dom/client';
+  import React from 'react';
 
 
-const root = ReactDom.createRoot(document.getElementById('app'));
+  const root = ReactDom.createRoot(document.getElementById('app'));
 
-root.render(
-  <h1>Hi World</h1>
-);
-```
+  root.render(
+    <h1>Hi World</h1>
+  );
+  ```
 
 - Go to 'index.html' and change 'script' extension, in order to match the modified 'main.jsx' file.
+
+- Once all this steps are made a good practice is to install a linter, for this project is used 'standard'.
+
+        -> npm i standard -D
+
+  Then we go to 'package.json' and extend the 'standard' ESLint configuration, so the project inherits the rules and settings from that linter.
+
+  ```ruby
+  "eslintConfig": {
+      "extends" : "./node_modules/standard/eslintrc.json"
+  }
+  ```
