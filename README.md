@@ -9,6 +9,13 @@ This project i found it useful for practicing different things that a Jr dev mus
 3.  Perform data fetching.
 4.  Infinite scrolling.
 
+APIs:
+
+- Facts Random: https://catfact.ninja/fact
+- Image random: https://cataas.com/cat/says/hello
+
+First we recover a cat random fact from first API, and then shows an image of a cat with the first word of the recovered fact using the second API.
+
 In order to create a react app with vanilla we have to create the enter point of the application:
 
 - First we initialized the project using Vite.
