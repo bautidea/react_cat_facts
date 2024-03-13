@@ -6,13 +6,13 @@ This project i found it useful for practicing different things that a Jr dev mus
 
 1.  Create a react app using vanilla initialization.
 2.  Handling various states that depend on each other.
-3.  Perform data fetching.
+3.  Perform data fetching using fetch, without any dependency.
 4.  Infinite scrolling.
 
 APIs:
 
 - Facts Random: https://catfact.ninja/fact
-- Image random: https://cataas.com/cat/says/hello
+- Image random: https://cataas.com/cat/says/
 
 First we recover a cat random fact from first API, and then shows an image of a cat with the first word of the recovered fact using the second API.
 
