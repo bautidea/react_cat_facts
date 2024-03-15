@@ -21,3 +21,11 @@ img {
     max-width: 320px;
     height: auto;
 }
+
+button {
+    margin: 3rem auto;
+    font-family: system-ui;
+    padding: 5px 10px;
+    outline: none;
+    cursor: pointer;
+}

@@ -8,8 +8,8 @@ const App = () => {
   const [fact, setFact] = useState()
   const [imgUrl, setImgUrl] = useState()
 
-  // Effect to get cat fact.
-  useEffect(() => {
+  // Function to obtain a random fact.
+  const getRandomFact = () => {
     fetch(CAT_ENDPOINT_RANDOM_FACT)
       .then((response) => response.json())
       .then((data) => {
@@ -17,7 +17,10 @@ const App = () => {
 
         setFact(fact)
       })
-  }, [])
+  }
+
+  // Effect to get cat fact.
+  useEffect(getRandomFact, [])
 
   // Effect to get image of a cat based on the fact.
   useEffect(() => {
@@ -47,6 +50,8 @@ const App = () => {
           imgUrl && <img src={`${CAT_ENDPOINT_IMAGE}${imgUrl}`} alt='Image of a cat with the first three words of a random fact' />
         }
       </section>
+
+      <button onClick={getRandomFact}>Get New Fact</button>
     </main>
   )
 }

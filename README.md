@@ -2,6 +2,10 @@
 
 ## State handling, data fetching & infinite scrolling.
 
+<div align='center' display='flex' flex-direction='row' width='100%'>
+<img src='./src/assets/git_img.PNG' width='50%' >
+</div>
+
 This project i found it useful for practicing different things that a Jr dev must know:
 
 1.  Create a react app using vanilla initialization.
