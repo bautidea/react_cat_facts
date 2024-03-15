@@ -12,7 +12,7 @@ This project i found it useful for practicing different things that a Jr dev mus
 APIs:
 
 - Facts Random: https://catfact.ninja/fact
-- Image random: https://cataas.com/cat/says/
+- Image random: https://cataas.com/
 
 First we recover a cat random fact from first API, and then shows an image of a cat with the first word of the recovered fact using the second API.
 
