@@ -8,6 +8,7 @@ const App = () => {
   const [fact, setFact] = useState()
   const [imgUrl, setImgUrl] = useState()
 
+  // Effect to get cat fact.
   useEffect(() => {
     fetch(CAT_ENDPOINT_RANDOM_FACT)
       .then((response) => response.json())
@@ -15,20 +16,25 @@ const App = () => {
         const { fact } = data
 
         setFact(fact)
-
-        const firstWords = fact.split(' ').slice(0, 3).join(' ')
-
-        fetch(`https://cataas.com/cat/says/${firstWords}?json=true`)
-          .then((response) => response.json())
-          .then(imgRes => {
-            // Keeping id.
-            const { _id } = imgRes
-
-            // Setting endpoint url.
-            setImgUrl(`cat/${_id}/says/${firstWords}`)
-          })
       })
   }, [])
+
+  // Effect to get image of a cat based on the fact.
+  useEffect(() => {
+    if (!fact) return
+
+    const firstWords = fact.split(' ').slice(0, 3).join(' ')
+
+    fetch(`https://cataas.com/cat/says/${firstWords}?json=true`)
+      .then((response) => response.json())
+      .then(imgRes => {
+        // Keeping id.
+        const { _id } = imgRes
+
+        // Setting endpoint url.
+        setImgUrl(`cat/${_id}/says/${firstWords}`)
+      })
+  }, [fact])
 
   return (
     <main>
