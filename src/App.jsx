@@ -1,42 +1,22 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-
-const CAT_ENDPOINT_RANDOM_FACT = 'https://catfact.ninja/fact'
-const CAT_ENDPOINT_IMAGE = 'https://cataas.com/'
+import getRandomFact from './services/randomFacts'
+import getRandomImg from './services/randomImg'
 
 const App = () => {
   const [fact, setFact] = useState()
   const [imgUrl, setImgUrl] = useState()
 
-  // Function to obtain a random fact.
-  const getRandomFact = () => {
-    fetch(CAT_ENDPOINT_RANDOM_FACT)
-      .then((response) => response.json())
-      .then((data) => {
-        const { fact } = data
-
-        setFact(fact)
-      })
-  }
-
   // Effect to get cat fact.
-  useEffect(getRandomFact, [])
+  useEffect(() => {
+    getRandomFact().then(setFact)
+  }, [])
 
   // Effect to get image of a cat based on the fact.
   useEffect(() => {
     if (!fact) return
 
-    const firstWords = fact.split(' ').slice(0, 3).join(' ')
-
-    fetch(`https://cataas.com/cat/says/${firstWords}?json=true`)
-      .then((response) => response.json())
-      .then(imgRes => {
-        // Keeping id.
-        const { _id } = imgRes
-
-        // Setting endpoint url.
-        setImgUrl(`cat/${_id}/says/${firstWords}`)
-      })
+    console.log(getRandomImg(fact))
   }, [fact])
 
   return (
@@ -47,7 +27,7 @@ const App = () => {
         {fact && <p>{fact}</p>}
 
         {
-          imgUrl && <img src={`${CAT_ENDPOINT_IMAGE}${imgUrl}`} alt='Image of a cat with the first three words of a random fact' />
+          imgUrl && <img src={`${imgUrl}`} alt='Image of a cat with the first three words of a random fact' />
         }
       </section>
 
