@@ -16,7 +16,7 @@ const App = () => {
   useEffect(() => {
     if (!fact) return
 
-    console.log(getRandomImg(fact))
+    getRandomImg(fact).then(setImgUrl)
   }, [fact])
 
   return (
