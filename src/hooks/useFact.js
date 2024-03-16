@@ -4,18 +4,14 @@ import getRandomFact from '../services/randomFacts'
 const useFact = () => {
   const [fact, setFact] = useState()
 
-  // Effect to get cat fact.
-  useEffect(() => {
+  const getFact = () => {
     getRandomFact().then(setFact)
-  }, [])
-
-  const handleClick = async () => {
-    const newFact = await getRandomFact()
-
-    setFact(newFact)
   }
 
-  return { fact, handleClick }
+  // Effect to get cat fact.
+  useEffect(getFact, [])
+
+  return { fact, getFact }
 }
 
 export default useFact

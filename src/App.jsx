@@ -3,7 +3,7 @@ import useCatImage from './hooks/useCatImage'
 import useFact from './hooks/useFact'
 
 const App = () => {
-  const { fact, handleClick } = useFact()
+  const { fact, getFact } = useFact()
   const { imgUrl } = useCatImage({ fact })
 
   return (
@@ -18,7 +18,7 @@ const App = () => {
         }
       </section>
 
-      <button onClick={handleClick}>Get New Fact</button>
+      <button onClick={getFact}>Get New Fact</button>
     </main>
   )
 }
