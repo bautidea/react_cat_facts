@@ -1,23 +1,22 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import getRandomFact from './services/randomFacts'
-import getRandomImg from './services/randomImg'
+import useCatImage from './hooks/useCatImage'
 
 const App = () => {
   const [fact, setFact] = useState()
-  const [imgUrl, setImgUrl] = useState()
+  const { imgUrl } = useCatImage({ fact })
 
   // Effect to get cat fact.
   useEffect(() => {
     getRandomFact().then(setFact)
   }, [])
 
-  // Effect to get image of a cat based on the fact.
-  useEffect(() => {
-    if (!fact) return
+  const handleClick = async () => {
+    const newFact = await getRandomFact()
 
-    getRandomImg(fact).then(setImgUrl)
-  }, [fact])
+    setFact(newFact)
+  }
 
   return (
     <main>
@@ -31,7 +30,7 @@ const App = () => {
         }
       </section>
 
-      <button onClick={getRandomFact}>Get New Fact</button>
+      <button onClick={handleClick}>Get New Fact</button>
     </main>
   )
 }
