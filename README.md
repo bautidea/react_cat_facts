@@ -1,6 +1,6 @@
 # Cat Scrolling App.
 
-## State handling, data fetching & infinite scrolling.
+## State handling, data fetching & testing.
 
 <div align='center' display='flex' flex-direction='row' width='100%'>
 <img src='./src/assets/git_img.PNG' width='50%' >
@@ -11,8 +11,9 @@ This project i found it useful for practicing different things that a Jr dev mus
 1.  Create a react app using vanilla initialization.
 2.  Handling various states that depend on each other.
 3.  Perform data fetching using fetch, without any dependency.
-4.  Infinite scrolling.
+4.  App Testing.
 
+## Used APIs:
 APIs:
 
 - Facts Random: https://catfact.ninja/fact
@@ -20,6 +21,7 @@ APIs:
 
 First we recover a cat random fact from first API, and then shows an image of a cat with the first word of the recovered fact using the second API.
 
+## Vanilla initialization:
 In order to create a react app with vanilla we have to create the enter point of the application:
 
 - First we initialized the project using Vite.
@@ -74,3 +76,16 @@ In order to create a react app with vanilla we have to create the enter point of
       "extends" : "./node_modules/standard/eslintrc.json"
   }
   ```
+
+## App testing:
+For testing i've used playwright (https://playwright.dev/docs/intro). In order to test the app i've followed this steps:
+
+- Run the install command, and customized the installation.
+
+        -> npm init playwright@latest
+
+- I performed a 'end-to-end' test, because this would be the most important test, to ensure that at least the text and img are being displayed correctly.
+
+- To execute the test we execute the following command:
+
+        -> npx playwright test
