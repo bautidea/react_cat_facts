@@ -1,5 +1,11 @@
-// @ts-check
-const { test, expect } = require('@playwright/test')
+// Initially the import statement was a require, like this,
+// const { test, expect } = require('@playwright/test')
+// I've change it to a normal import because i was getting a reference error
+// when running 'npx playwright test'.
+import { test, expect } from '@playwright/test'
+
+// Also to solve the mentioned error i had to change the extension of the file
+// 'playwright.config.js' --> 'playwright.config.cjs'
 
 const LOCALHOST_URL = 'http://localhost:5173/'
 
