@@ -1,4 +1,4 @@
-# Cat Scrolling App.
+# Cats Facts App.
 
 ## State handling, data fetching & testing.
 
@@ -6,7 +6,7 @@
 <img src='./src/assets/git_img.PNG' width='50%' >
 </div>
 
-This project i found it useful for practicing different things that a Jr dev must know:
+This project I found it useful for practicing different things that a Jr dev must know:
 
 1.  Create a react app using vanilla initialization.
 2.  Handling various states that depend on each other.
@@ -19,12 +19,12 @@ APIs:
 - Facts Random: https://catfact.ninja/fact
 - Image random: https://cataas.com/
 
-First we recover a cat random fact from first API, and then shows an image of a cat with the first word of the recovered fact using the second API.
+First, we recover a cat random fact from the first API and then show an image of a cat with the first word of the recovered fact using the second API.
 
 ## Vanilla initialization:
-In order to create a react app with vanilla we have to create the enter point of the application:
+To create a react app with vanilla we have to create the enter point of the application:
 
-- First we initialized the project using Vite.
+- First, we initialized the project using Vite.
 
         -> npm create vite@latest and select 'Vanilla'
 
@@ -32,11 +32,11 @@ In order to create a react app with vanilla we have to create the enter point of
 
         -> npm i @vitejs/plugin-react -E
 
-- Install React dependencies, by default if we go to 'package.json' we will observe that react dependencies are not installed
+- Install React dependencies, by default if we go to 'package.json' we will observe that React dependencies are not installed
 
         -> npm i react react-dom -E
 
-- Create a config file named vite.config.js, in which we declare that we are going to use the previous installed react plugin.
+- Create a config file named vite.config.js, in which we declare that we are going to use the previously installed react plugin.
 
   ```ruby
   import { defineConfig } from 'vite';
